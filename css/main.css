@@ -19,20 +19,82 @@ body {
 }
 
 .fixedNav {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  height: 80px;
   border: 1px solid red;
   background-color: var(--background);
-  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.logo {
+.navLeft {
   height: 100%;
-  width: 50%;
+  width: 100%;
   font-family: 'Crete Round', serif;
   color: var(--purple);
   font-size: 1.5rem;
+  padding: 0 2rem;
+  display: grid;
+  align-items: center;
 }
+
+.navRight {
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
+  display: grid;
+  align-items: center;
+  justify-content: end;
+}
+
+.menuWrapper {
+  display: inline-block;
+  padding: 7px 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.menuLine {
+  width: 1.5rem;
+  height: .15rem;
+  background-color: var(--purple);
+  transition: transform 300ms ease;
+}
+
+.menuLine::before, .menuLine::after {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: .15rem;
+  background-color: var(--purple);
+  transition: margin 300ms ease 300ms, transform 300ms ease;
+}
+
+.menuLine::before {
+  margin-top: -.4rem;
+}
+
+.menuLine::after {
+  margin-top: .4rem;
+}
+
+.menuLine.clicked {
+  transform: rotate(45deg);
+  transition: transform 300ms ease 300ms;
+}
+
+.menuLine.clicked::before, .menuLine.clicked::after {
+  margin-top: 0;
+  transform: rotate(90deg);
+  transition: margin 300ms ease, transform 300ms ease 300ms;
+}
+
+
+
+
+
+
 
 .introWrapper {
   width: 100%;
