@@ -22,7 +22,7 @@ body {
   position: fixed;
   width: 100%;
   height: 80px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: var(--background);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -79,16 +79,29 @@ body {
   margin-top: .4rem;
 }
 
-.menuLine.clicked {
+.menuLine.toggled {
   transform: rotate(45deg);
   transition: transform 300ms ease 300ms;
 }
 
-.menuLine.clicked::before, .menuLine.clicked::after {
+.menuLine.toggled::before, .menuLine.toggled::after {
   margin-top: 0;
   transform: rotate(90deg);
   transition: margin 300ms ease, transform 300ms ease 300ms;
 }
+
+.navOpened {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  background-color: #fff;
+  visibility: hidden;
+}
+
+
+
+
 
 
 
