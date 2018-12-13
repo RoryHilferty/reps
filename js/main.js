@@ -1,7 +1,15 @@
-var menuWrapper = document.querySelector('.menuWrapper');
+$(document).ready(function() {
+  var menuWrapper = document.querySelector('.menuWrapper');
+  
+  menuWrapper.addEventListener('click', function() {
+    var menuLine = document.querySelector('.menuLine');
+    
+    menuLine.classList.toggle('toggled');
+  });
 
-menuWrapper.addEventListener('click', function() {
-  var menuLine = document.querySelector('.menuLine');
+  var arrow = document.querySelector('.arrow');
 
-  menuLine.classList.toggle('toggled');
+  arrow.addEventListener('click', function() {
+    $('.arrow').animatescroll({scrollSpeed: 750, easing: 'easeInOutQuad'});
+  });
 });
