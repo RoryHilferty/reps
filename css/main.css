@@ -104,7 +104,7 @@ body {
   align-items: center;
   padding: 0 3rem;
   transition: opacity 300ms ease;
-  visibility: hidden;
+  pointer-events: none;
 }
 
 .navOpened li {
@@ -114,6 +114,7 @@ body {
   text-align: end;
   padding-right: 5%;
   opacity: 0;
+  transition: opacity 50ms linear, padding-right 0ms linear 300ms;
 }
 
 .navOpened li a {
@@ -131,7 +132,7 @@ body {
 
 .navOpened.toggled {
   opacity: 1;
-  visibility: visible;
+  pointer-events: auto;
 }
 
 .navOpened.toggled ul li:nth-child(1) {
@@ -151,10 +152,6 @@ body {
   padding-right: 0;
   transition: opacity 200ms ease 700ms, padding-right 200ms ease-out 700ms
 }
-
-
-
-
 
 .introWrapper {
   width: 100%;
