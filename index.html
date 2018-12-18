@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="animate_scroll/animatescroll.js"></script>
+  <script src="js/rellax.js"></script>
   <script src="js/main.js"></script>
   <title>reps.</title>
 </head>
@@ -36,8 +37,8 @@
   <div class="introWrapper">
     <div class="introContent">
       <div>
-        <div class="header">welcome to reps.</div>
-        <div class="subHeader">the <span class="gold">best</span> repmax calculator you'll ever use.</div>
+        <div class="header rellax" data-rellax-speed="30">welcome to reps.</div>
+        <div class="subHeader rellax" data-rellax-speed="10">the <span class="gold">best</span> repmax calculator you'll ever use.</div>
       </div>
     </div>
 
@@ -47,7 +48,14 @@
   </div>
 
   <div class="appWrapper" id="app">
+    <div class="inputsWrapper">
+      <span class="inputLine"><input type="number" placeholder="weight" class="firstInput"></span>
+      <span class="inputLine"><input type="number" placeholder="reps" class="secondInput"></span>
+    </div>
 
+    <div class="submitWrapper">
+      <button class="btn">submit</button>
+    </div>
   </div>
 
 
