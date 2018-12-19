@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  var rallax = new Rellax('.rellax');
   var menuWrapper = document.querySelector('.menuWrapper');
   
   menuWrapper.addEventListener('click', function() {
@@ -32,6 +33,4 @@ $(document).ready(function() {
       }
     });
   }
-
-  var rallax = new Rellax('.rellax');
 });
