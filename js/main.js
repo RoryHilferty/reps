@@ -38,6 +38,10 @@ $(document).ready(function() {
   for (input of inputList) {
     input.addEventListener('focus', function(ev) {
       ev.target.parentElement.classList.add('effect');
+
+      setTimeout(function() {
+        $('.weight').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint', padding: 110});
+      }, 150)
     });
 
     input.addEventListener('blur', function(ev) {
@@ -49,7 +53,7 @@ $(document).ready(function() {
 
   document.querySelector('.btn').addEventListener('click', function() {
     setTimeout(function() {
-      $('.weight').animatescroll({scrollSpeed: 1000, easing: 'easeInOutQuint', padding: 110});
+      $('.weight').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint', padding: 110});
     }, 100)
 
     result = document.getElementById('result');
@@ -63,4 +67,7 @@ $(document).ready(function() {
 
 
   });
+
+
+
 });
