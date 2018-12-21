@@ -133,10 +133,6 @@ body {
   color: rgba(255, 255, 255, 0);
 }
 
-.inputLine.toggled::after, .inputLine.toggled.effect::after {
-  background-color: rgba(255, 255, 255, 0);
-}
-
 .navOpened.toggled {
   opacity: 1;
   pointer-events: auto;
@@ -261,7 +257,6 @@ body {
 .submitWrapper {
   font-size: 1rem;
   color: #fff;
-  /* border: 1px solid red; */
   padding: 2rem 0 0 0;
   text-align: center;
 }
