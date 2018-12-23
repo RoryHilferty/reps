@@ -1,11 +1,10 @@
 $(document).ready(function() {
   // Define Wathan's formula for calculating 1RM
   function wathan(weight, reps) {
-    // Get user inputed values
     weight = parseFloat(document.querySelector('.weight').value);
     reps = parseFloat(document.querySelector('.reps').value);
 
-    // Detects invalid values
+    // Detect if input values are invalid
     if (reps == 0 || document.querySelector('.weight').value == '' || document.querySelector('.reps').value == '') {
       return 0;
     } else if (reps == 1) {
@@ -23,29 +22,32 @@ $(document).ready(function() {
   // Get wrapper for burger menu
   var menuWrapper = document.querySelector('.menuWrapper');
   
-  // Toggle classes when burger menu is clicked
   menuWrapper.addEventListener('click', function() {
     document.querySelector('.menuLine').classList.toggle('toggled');
     document.querySelector('.navOpened').classList.toggle('toggled');
     document.querySelector('.navLeft').classList.toggle('toggled');
   });
 
+  // Smooth scroll to app when arrow is clicked
   document.querySelector('.arrow').addEventListener('click', function() {
     $('#app').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint'});
   });
 
-  var inputList =  document.querySelectorAll('input');
+  var inputArray =  document.querySelectorAll('input');
 
-  for (input of inputList) {
-    input.addEventListener('focus', function(ev) {
+  for (item of inputArray) {
+    item.addEventListener('focus', function(ev) {
       ev.target.parentElement.classList.add('effect');
 
-      setTimeout(function() {
-        $('.weight').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint', padding: 110});
-      }, 200)
+      if (screen.width <= 800) {
+        setTimeout(function() {
+          $('.weight').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint', padding: 110});
+        }, 200)
+      }
     });
 
-    input.addEventListener('blur', function(ev) {
+    item.addEventListener('blur', function(ev) {
+      // Detect if input values are invalid
       if (ev.target.value == '') {
         ev.target.parentElement.classList.remove('effect');
       }
@@ -53,12 +55,16 @@ $(document).ready(function() {
   }
 
   document.querySelector('.btn').addEventListener('click', function() {
-    setTimeout(function() {
-      $('.weight').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint', padding: 110});
-    }, 200)
+    if (screen.width <= 800) {
+      setTimeout(function() {
+        $('.weight').animatescroll({scrollSpeed: 1500, easing: 'easeInOutQuint', padding: 110});
+      }, 200)
+    }
 
     result = document.getElementById('result');
     result.classList.add('result');
     result.innerHTML = wathan();
+
+    
   });
 });
