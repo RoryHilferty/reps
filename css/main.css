@@ -278,4 +278,5 @@ body {
   font-size: 2rem;
   color: var(--purple);
   /* border: 1px solid red; */
+  letter-spacing: .05rem;
 }
