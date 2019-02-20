@@ -23,6 +23,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1.5rem;
   position: relative;
+  background-color: var(--background);
 }
 
 .fixedNav {
@@ -47,6 +48,11 @@ body {
   display: grid;
   align-items: center;
   transition: color 300ms ease;
+}
+
+.navLeft a {
+  text-decoration: none;
+  color: var(--purple);
 }
 
 .navRight {
@@ -279,4 +285,36 @@ body {
   color: var(--purple);
   /* border: 1px solid red; */
   letter-spacing: .05rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.tableWrapper {
+  width: 100%;
+  padding: 0 3rem;
+  padding-bottom: 2rem;
+}
+
+.tableWrapper table {
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #fff;
+  border-collapse: collapse;
+}
+
+.tableWrapper table th {
+  font-weight: unset;
+  color: var(--purple);
+}
+
+.tableWrapper table th, .tableWrapper table td {
+  width: 2%;
+  text-align: center;
+  padding: 0.7rem 0;
+}
+
+.tableWrapper table td {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
