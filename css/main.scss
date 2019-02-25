@@ -1,0 +1,78 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins" rel="stylesheet');
+
+// Colors
+$background: #171325;
+$mainBlue: #5A45FF;
+$mainText: #eee;
+$secondaryText: #717597;
+$placeholder: #707070;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  background-color: $background;
+  margin: 0;
+}
+
+body {
+  padding: 0 3rem;
+  font-family: 'poppins', sans-serif;
+}
+
+.nav {
+  border: 1px solid red;
+  width: 100%;
+  height: 110px;
+  font-family: 'crete round', serif;
+  font-size: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .logo {
+    display: grid;
+    align-items: center;
+
+    a {
+      text-decoration: none;
+      color: $mainBlue;
+    }
+  }
+
+  .menu {
+    display: grid;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .menuBtn {
+    display: inline-block;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+
+  .menuLine {
+    width: 1.5rem;
+    height: 0.15rem;
+    background-color: $mainBlue;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 1.5rem;
+      height: .15rem;
+      background-color: $mainBlue;
+    }
+
+    &::before {
+      margin-top: -0.4rem;
+    }
+
+    &::after {
+      margin-top: 0.4rem;
+    }
+  }
+}

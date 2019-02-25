@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins" rel="stylesheet');
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  background-color: #171325;
+  margin: 0;
+}
+
+body {
+  padding: 0 3rem;
+  font-family: 'poppins', sans-serif;
+}
+
+.nav {
+  border: 1px solid red;
+  width: 100%;
+  height: 110px;
+  font-family: 'crete round', serif;
+  font-size: 1.5rem;
+  display: -ms-grid;
+  display: grid;
+       -ms-grid-columns: (1fr)[2];
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.nav .logo {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+        align-items: center;
+}
+
+.nav .logo a {
+  text-decoration: none;
+  color: #5A45FF;
+}
+
+.nav .menu {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav .menuBtn {
+  display: inline-block;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.nav .menuLine {
+  width: 1.5rem;
+  height: 0.15rem;
+  background-color: #5A45FF;
+}
+
+.nav .menuLine::before, .nav .menuLine::after {
+  content: '';
+  position: absolute;
+  width: 1.5rem;
+  height: .15rem;
+  background-color: #5A45FF;
+}
+
+.nav .menuLine::before {
+  margin-top: -0.4rem;
+}
+
+.nav .menuLine::after {
+  margin-top: 0.4rem;
+}
+/*# sourceMappingURL=main.css.map */
