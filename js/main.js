@@ -1,11 +1,11 @@
 window.onload = function() {
-  // Define Wathans formula for calculating 1RM
+  // Define Wathan's formula for calculating 1RM
   function wathan(weight, reps) {
     weight = parseFloat(document.querySelector('.weight').value);
     reps = parseFloat(document.querySelector('.reps').value);
 
     // Detect if input values are invalid
-    if (reps == 0 || document.querySelector('.weight').value == '' || document.querySelector('.reps').value == '') {
+    if (reps == 0 || isNaN(reps) || isNaN(weight)) {
       return 0;
     } else if (reps == 1) {
       return weight;
@@ -34,4 +34,21 @@ window.onload = function() {
       }
     });
   }
+
+  const calculate = document.querySelector('.calculate');
+  
+  calculate.addEventListener('click', function() {
+    const resultArea = document.querySelector('.resultArea');
+
+    if (resultArea.classList.contains('notVisible')) {
+      resultArea.classList.remove('notVisible');
+    }
+
+    // Detect if returned value is ridiculously large
+    if (wathan() > 10000) {
+      resultArea.innerHTML = 'O O F';
+    } else {
+      resultArea.innerHTML = wathan().toFixed(0);
+    }
+  });
 }
