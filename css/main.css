@@ -175,7 +175,7 @@ input::placeholder {
 
 .calculateWrapper {
   width: 100%;
-  height: 150px;
+  height: 130px;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -200,5 +200,18 @@ input::placeholder {
 
 .calculateWrapper .btn:focus {
   outline: none;
+}
+
+.resultArea {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #eee;
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
+}
+
+.resultArea.notVisible {
+  opacity: 0;
 }
 /*# sourceMappingURL=main.css.map */
