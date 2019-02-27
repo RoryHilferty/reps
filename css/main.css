@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins" rel="stylesheet');
+@import url("https://fonts.googleapis.com/css?family=Crete+Round|Poppins:400,500,600");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 html, body {
@@ -12,8 +16,8 @@ html, body {
 }
 
 body {
+  font-family: "poppins", sans-serif;
   padding: 0 3rem;
-  font-family: 'poppins', sans-serif;
 }
 
 .nav {
@@ -27,7 +31,7 @@ body {
       grid-template-columns: repeat(2, 1fr);
 }
 
-.nav .logo {
+.logo {
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -35,12 +39,12 @@ body {
           align-items: center;
 }
 
-.nav .logo a {
+.logo a {
   text-decoration: none;
   color: #5A45FF;
 }
 
-.nav .menu {
+.menu {
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: end;
@@ -51,13 +55,13 @@ body {
           align-items: center;
 }
 
-.nav .menuBtn {
+.menuBtn {
   display: inline-block;
   padding: 8px 0;
   cursor: pointer;
 }
 
-.nav .menuLine {
+.menuLine {
   width: 1.5rem;
   height: 0.15rem;
   background-color: #5A45FF;
@@ -69,7 +73,7 @@ body {
   transition: transform 250ms ease, -webkit-transform 250ms ease;
 }
 
-.nav .menuLine::before, .nav .menuLine::after {
+.menuLine::before, .menuLine::after {
   content: '';
   position: absolute;
   width: 1.5rem;
@@ -81,15 +85,15 @@ body {
   transition: margin-top 250ms ease 250ms, transform 250ms ease, -webkit-transform 250ms ease;
 }
 
-.nav .menuLine::before {
+.menuLine::before {
   margin-top: -0.4rem;
 }
 
-.nav .menuLine::after {
+.menuLine::after {
   margin-top: 0.4rem;
 }
 
-.nav .menuBtn.open .menuLine {
+.menuBtn.open .menuLine {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-transition: -webkit-transform 250ms ease 250ms;
@@ -98,7 +102,7 @@ body {
   transition: transform 250ms ease 250ms, -webkit-transform 250ms ease 250ms;
 }
 
-.nav .menuBtn.open .menuLine::before, .nav .menuBtn.open .menuLine::after {
+.menuBtn.open .menuLine::before, .menuBtn.open .menuLine::after {
   margin-top: 0;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -106,5 +110,95 @@ body {
   transition: margin-top 250ms ease, -webkit-transform 250ms ease 250ms;
   transition: margin-top 250ms ease, transform 250ms ease 250ms;
   transition: margin-top 250ms ease, transform 250ms ease 250ms, -webkit-transform 250ms ease 250ms;
+}
+
+.inputsWrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+input {
+  font-family: "poppins", sans-serif;
+  width: 100px;
+  font-size: 1rem;
+  padding: 0 0 0 0.8rem;
+  background: none;
+  border: none;
+  color: #eee;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::-webkit-input-placeholder {
+  color: #302E44;
+}
+
+input:-ms-input-placeholder {
+  color: #302E44;
+}
+
+input::-ms-input-placeholder {
+  color: #302E44;
+}
+
+input::placeholder {
+  color: #302E44;
+}
+
+.underline {
+  display: inline-block;
+}
+
+.underline:nth-child(1) {
+  margin-right: 2rem;
+}
+
+.underline::after {
+  content: '';
+  width: 75%;
+  height: 0.1rem;
+  background-color: #302E44;
+  display: block;
+  margin: auto;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-transition: width 250ms ease, background-color 250ms ease;
+  transition: width 250ms ease, background-color 250ms ease;
+}
+
+.underline.effect::after {
+  width: 100%;
+  background-color: #5A45FF;
+}
+
+.calculateWrapper {
+  width: 100%;
+  height: 150px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calculateWrapper .btn {
+  background-color: #5A45FF;
+  color: #eee;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-family: "poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.calculateWrapper .btn:focus {
+  outline: none;
 }
 /*# sourceMappingURL=main.css.map */
