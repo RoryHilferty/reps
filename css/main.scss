@@ -33,7 +33,6 @@ body {
 }
 
 .nav {
-  // border: 1px solid red;
   width: 100%;
   height: 110px;
   font-family: 'crete round', serif;
@@ -91,6 +90,7 @@ body {
 }
 
 .menuBtn.open {
+
   .menuLine {
     transform: rotate(45deg);
     transition: transform 250ms ease 250ms;
@@ -152,9 +152,7 @@ input {
 }
 
 .calculateWrapper {
-  // border: 1px solid red;
   width: 100%;
-  height: 130px;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -169,6 +167,7 @@ input {
     font-family: $fontStack;
     font-size: 0.8rem;
     font-weight: 500;
+    margin: 2.6rem 0;
     
     &:focus {
       outline: none;
@@ -180,10 +179,40 @@ input {
   text-align: center;
   font-size: 2.5rem;
   color: $mainText;
+  margin: -1rem 0;
   opacity: 1;
   transition: opacity 250ms ease;
 
   &.notVisible {
     opacity: 0;
+  }
+}
+
+.repMaxes {
+  margin: 0 auto;
+  color: $secondaryText;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin: 2.6rem 0;
+  opacity: 1;
+  transition: opacity 250ms ease;
+
+  &.notVisible {
+    opacity: 0;
+  }
+
+  th {
+    font-weight: unset;
+    color: $primary;
+  }
+
+  th, td {
+    width: 50%;
+    padding: 0.7rem 0;
+  }
+
+  td {
+    border-top: 1px solid rgba(48, 46, 68, 0.3);
   }
 }

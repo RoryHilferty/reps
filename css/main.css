@@ -175,7 +175,6 @@ input::placeholder {
 
 .calculateWrapper {
   width: 100%;
-  height: 130px;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
@@ -196,6 +195,7 @@ input::placeholder {
   font-family: "poppins", sans-serif;
   font-size: 0.8rem;
   font-weight: 500;
+  margin: 2.6rem 0;
 }
 
 .calculateWrapper .btn:focus {
@@ -206,6 +206,7 @@ input::placeholder {
   text-align: center;
   font-size: 2.5rem;
   color: #eee;
+  margin: -1rem 0;
   opacity: 1;
   -webkit-transition: opacity 250ms ease;
   transition: opacity 250ms ease;
@@ -213,5 +214,35 @@ input::placeholder {
 
 .resultArea.notVisible {
   opacity: 0;
+}
+
+.repMaxes {
+  margin: 0 auto;
+  color: #717597;
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+  margin: 2.6rem 0;
+  opacity: 1;
+  -webkit-transition: opacity 250ms ease;
+  transition: opacity 250ms ease;
+}
+
+.repMaxes.notVisible {
+  opacity: 0;
+}
+
+.repMaxes th {
+  font-weight: unset;
+  color: #5A45FF;
+}
+
+.repMaxes th, .repMaxes td {
+  width: 50%;
+  padding: 0.7rem 0;
+}
+
+.repMaxes td {
+  border-top: 1px solid rgba(48, 46, 68, 0.3);
 }
 /*# sourceMappingURL=main.css.map */
