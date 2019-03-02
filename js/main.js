@@ -23,13 +23,13 @@ window.onload = function() {
   const inputList = document.querySelectorAll('input');
 
   for (item of inputList) {
-    item.addEventListener('focus', function(event) {
-      event.target.parentElement.classList.add('effect');
+    item.addEventListener('focus', function(e) {
+      e.target.parentElement.classList.add('effect');
     });
 
-    item.addEventListener('blur', function(event) {
-      if (event.target.value == '') {
-        event.target.parentElement.classList.remove('effect');
+    item.addEventListener('blur', function(e) {
+      if (e.target.value == '') {
+        e.target.parentElement.classList.remove('effect');
       }
     });
   }
