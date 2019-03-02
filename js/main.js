@@ -10,8 +10,7 @@ window.onload = function() {
     } else if (reps == 1) {
       return weight;
     } else {
-      var result = (100 * weight) / (48.8 + 53.8 * Math.exp(-0.075 * reps));
-      return result;
+      return (100 * weight) / (48.8 + 53.8 * Math.exp(-0.075 * reps));
     }
   }
 
@@ -34,10 +33,8 @@ window.onload = function() {
       }
     });
   }
-
-  const calculate = document.querySelector('.calculate');
   
-  calculate.addEventListener('click', function() {
+  document.querySelector('.calculate').addEventListener('click', function() {
     const resultArea = document.querySelector('.resultArea');
     const repMaxes = document.querySelector('.repMaxes');
 
