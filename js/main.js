@@ -20,6 +20,22 @@ window.onload = function() {
     menuBtn.classList.toggle('open');
   });
 
+  window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.nav');
+
+    if (window.pageYOffset < 10) {
+      if (nav.classList.contains('scrolled')) {
+        nav.classList.remove('scrolled');
+      }
+    }
+
+    if (window.pageYOffset >= 10) {
+      if (nav.classList.contains('scrolled') == false) {
+        nav.classList.add('scrolled');
+      }
+    }
+  });
+
   const inputList = document.querySelectorAll('input');
 
   for (item of inputList) {
