@@ -1,4 +1,5 @@
 window.onload = function() {
+
   // Define Wathan's formula for calculating 1RM
   function wathan(weight, reps) {
     weight = parseFloat(document.querySelector('.weight').value);
@@ -18,20 +19,29 @@ window.onload = function() {
 
   menuBtn.addEventListener('click', function() {
     menuBtn.classList.toggle('open');
+    document.querySelector('.nav').classList.toggle('open');
+
+    if (menuBtn.classList.contains('open')) {
+      document.body.classList.add('noScroll');
+    } else {
+      document.body.classList.remove('noScroll');
+    }
   });
 
   window.addEventListener('scroll', function() {
-    const nav = document.querySelector('.nav');
+    const top = document.querySelector('.top');
+
+
 
     if (window.pageYOffset < 10) {
-      if (nav.classList.contains('scrolled')) {
-        nav.classList.remove('scrolled');
+      if (top.classList.contains('scrolled')) {
+        top.classList.remove('scrolled');
       }
     }
 
     if (window.pageYOffset >= 10) {
-      if (nav.classList.contains('scrolled') == false) {
-        nav.classList.add('scrolled');
+      if (top.classList.contains('scrolled') == false) {
+        top.classList.add('scrolled');
       }
     }
   });
@@ -53,6 +63,8 @@ window.onload = function() {
   document.querySelector('.calculate').addEventListener('click', function() {
     const resultArea = document.querySelector('.resultArea');
     const repMaxes = document.querySelector('.repMaxes');
+
+    document.querySelector('.nav').classList.add('expand');
 
     if (resultArea.classList.contains('notVisible')) {
       resultArea.classList.remove('notVisible');
