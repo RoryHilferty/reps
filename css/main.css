@@ -17,6 +17,7 @@ html, body {
 
 body {
   font-family: "poppins", sans-serif;
+  padding: 0 3rem;
 }
 
 .nav {
