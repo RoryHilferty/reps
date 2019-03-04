@@ -31,16 +31,27 @@ html, body {
 
 body {
   font-family: $fontStack;
-  padding: 0 3rem;
 }
 
 .nav {
+  top: 0;
+  left: 0;
+  position: fixed;
+  padding: 0 3rem;
   width: 100%;
   height: 110px;
+  background-color: $background;
+  z-index: 1;
   font-family: 'crete round', serif;
   font-size: 1.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  transform: translateY(0);
+  transition: transform 500ms ease-in-out;
+  
+  &.scrolled {
+    transform: translateY(-110px);
+  }
 }
 
 .logo {
@@ -106,7 +117,8 @@ body {
 }
 
 .inputsWrapper {
-  margin-top: 2rem;
+  margin-top: 110px;
+  padding-top: 2rem;
   text-align: center;
 }
 
