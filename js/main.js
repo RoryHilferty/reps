@@ -62,7 +62,7 @@ window.onload = function() {
 
     // Add event listener for when the user releases a key
     item.addEventListener('keyup', function(e) {
-      // If it is the enter key (key code 13), then click the calculate button
+      // If it's the enter key (key code 13), then click the calculate button
       if (event.keyCode === 13) {
         // Prevent the default action of the enter key if necessary
         event.preventDefault();
@@ -75,13 +75,11 @@ window.onload = function() {
     const resultArea = document.querySelector('.resultArea');
     const repMaxes = document.querySelector('.repMaxes');
 
-    document.querySelector('.nav').classList.add('expand');
-
     if (resultArea.classList.contains('notVisible')) {
       resultArea.classList.remove('notVisible');
     }
 
-    // Detect if returned value is ridiculously large
+    // Detect if returned value is ridiculously large or 0
     if (wathan() > 1000 || wathan() == 0) {
       if (resultArea.classList.contains('memeFont') == false) {
         resultArea.classList.add('memeFont');

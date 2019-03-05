@@ -152,7 +152,7 @@ body.noScroll {
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -173,11 +173,6 @@ body.noScroll {
           justify-content: center;
   -webkit-transition: opacity 250ms ease;
   transition: opacity 250ms ease;
-}
-
-.nav.expand {
-  height: 110vh;
-  padding-bottom: 10vh;
 }
 
 .nav span {
