@@ -31,8 +31,6 @@ window.onload = function() {
   window.addEventListener('scroll', function() {
     const top = document.querySelector('.top');
 
-
-
     if (window.pageYOffset < 10) {
       if (top.classList.contains('scrolled')) {
         top.classList.remove('scrolled');
