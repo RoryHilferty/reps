@@ -9,7 +9,7 @@ $mainText: #eee;
 $secondaryText: #717597;
 $placeholder: #302E44;
 
-// Media Querie
+// Media Query
 
 @mixin breakpoint($break) {
   @media (min-width: $break) {
