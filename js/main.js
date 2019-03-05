@@ -58,6 +58,13 @@ window.onload = function() {
         e.target.parentElement.classList.remove('effect');
       }
     });
+
+    item.addEventListener('keyup', function(e) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        document.querySelector('.calculate').click();
+      }
+    });
   }
   
   document.querySelector('.calculate').addEventListener('click', function() {
@@ -71,13 +78,34 @@ window.onload = function() {
     }
 
     // Detect if returned value is ridiculously large
-    if (wathan() > 10000) {
-      resultArea.innerHTML = 'O O F';
+    if (wathan() > 1000 || wathan() == 0) {
+      if (resultArea.classList.contains('memeFont') == false) {
+        resultArea.classList.add('memeFont');
+      }
+
+      const faces = [
+        '(·.·)',
+        '(;-;)',
+        '(·_·)',
+        '(·‿·)',
+        '(^.^)',
+        '(·o·)',
+        'ᕦ(ò_ó)ᕤ',
+        '\\(·◡·)/',
+        '(つ·◡·)つ',
+        '(·╭╮·)',
+      ];
+
+      resultArea.innerHTML = faces[Math.floor(Math.random() * faces.length)];
 
       if (repMaxes.classList.contains('notVisible') == false) {
         repMaxes.classList.add('notVisible');
       }
     } else {
+      if (resultArea.classList.contains('memeFont')) {
+        resultArea.classList.remove('memeFont');
+      }
+
       resultArea.innerHTML = wathan().toFixed(0);
     }
     
@@ -94,7 +122,7 @@ window.onload = function() {
      10: 0.74213
     }
 
-    if (wathan() <= 10000) {
+    if (wathan() <= 1000 && wathan() != 0) {
       if (repMaxes.classList.contains('notVisible')) {
         repMaxes.classList.remove('notVisible');
       }
