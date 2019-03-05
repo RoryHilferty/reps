@@ -31,15 +31,16 @@ window.onload = function() {
   window.addEventListener('scroll', function() {
     const top = document.querySelector('.top');
 
-    if (window.pageYOffset < 10) {
-      if (top.classList.contains('scrolled')) {
-        top.classList.remove('scrolled');
-      }
-    }
-
+    // Detect if page has been scrolled 10px or more from top of viewport
     if (window.pageYOffset >= 10) {
       if (top.classList.contains('scrolled') == false) {
         top.classList.add('scrolled');
+      }
+    }
+
+    if (window.pageYOffset < 10) {
+      if (top.classList.contains('scrolled')) {
+        top.classList.remove('scrolled');
       }
     }
   });
@@ -48,17 +49,22 @@ window.onload = function() {
 
   for (item of inputList) {
     item.addEventListener('focus', function(e) {
+      // Add class to parent element if input field is selected
       e.target.parentElement.classList.add('effect');
     });
 
     item.addEventListener('blur', function(e) {
+      // If when the input field is deselected the field is empty, remove class from parent element
       if (e.target.value == '') {
         e.target.parentElement.classList.remove('effect');
       }
     });
 
+    // Add event listener for when the user releases a key
     item.addEventListener('keyup', function(e) {
+      // If it is the enter key (key code 13), then click the calculate button
       if (event.keyCode === 13) {
+        // Prevent the default action of the enter key if necessary
         event.preventDefault();
         document.querySelector('.calculate').click();
       }
@@ -81,6 +87,7 @@ window.onload = function() {
         resultArea.classList.add('memeFont');
       }
 
+      // Create an array of emojis
       const faces = [
         '(·.·)',
         '(;-;)',
@@ -92,8 +99,9 @@ window.onload = function() {
         '\\(·◡·)/',
         '(つ·◡·)つ',
         '(·╭╮·)',
-      ];
-
+      ]
+      
+      // Make the result a random emoji
       resultArea.innerHTML = faces[Math.floor(Math.random() * faces.length)];
 
       if (repMaxes.classList.contains('notVisible') == false) {
@@ -107,6 +115,7 @@ window.onload = function() {
       resultArea.innerHTML = wathan().toFixed(0);
     }
     
+    // Create an object of multiplies for reps 1 - 10
     const multipliers = {
       1: 1,
       2: 0.95106,
@@ -125,6 +134,7 @@ window.onload = function() {
         repMaxes.classList.remove('notVisible');
       }
 
+      // Set up the table headers
       repMaxes.innerHTML = `
         <tr>
           <th>Reps</th>
@@ -132,6 +142,7 @@ window.onload = function() {
         </tr>
       `;
 
+      // Add a row to the table for each rep multiplier
       for (i = 1; i <= Object.keys(multipliers).length; i++) {
         repMaxes.innerHTML += `
           <tr>
