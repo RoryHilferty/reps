@@ -10,7 +10,6 @@ $secondaryText: #717597;
 $placeholder: #302E44;
 
 // Media Query
-
 @mixin breakpoint($break) {
   @media (min-width: $break) {
     @content;
