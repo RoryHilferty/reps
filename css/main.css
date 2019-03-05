@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Crete+Round|Poppins:400,500,600");
+@import url("https://fonts.googleapis.com/css?family=Crete+Round|Poppins:400,500,600|Roboto+Mono");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -50,6 +50,24 @@ body.noScroll {
 .top.scrolled {
   -webkit-transform: translateY(-110px);
           transform: translateY(-110px);
+}
+
+@media (min-width: 800px) {
+  .top {
+    padding: 0 8rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .top {
+    padding: 0 12rem;
+  }
+}
+
+@media (min-width: 1300px) {
+  .top {
+    padding: 0 20rem;
+  }
 }
 
 .topLeft {
@@ -293,13 +311,17 @@ input::placeholder {
   opacity: 0;
 }
 
+.resultArea.memeFont {
+  font-family: 'Roboto Mono', serif;
+}
+
 .repMaxes {
   margin: 0 auto;
   color: #717597;
   border-collapse: collapse;
   text-align: center;
   width: 100%;
-  margin: 2.6rem 0;
+  margin: 2.6rem auto;
   opacity: 1;
   -webkit-transition: opacity 250ms ease;
   transition: opacity 250ms ease;
@@ -321,5 +343,11 @@ input::placeholder {
 
 .repMaxes td {
   border-top: 1px solid rgba(48, 46, 68, 0.3);
+}
+
+@media (min-width: 370px) {
+  .repMaxes {
+    width: 270px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

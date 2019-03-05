@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins:400,500,600');
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Poppins:400,500,600|Roboto+Mono');
 $fontStack: 'poppins', sans-serif;
 
 // Colors
@@ -9,7 +9,13 @@ $mainText: #eee;
 $secondaryText: #717597;
 $placeholder: #302E44;
 
-// Media Queries
+// Media Querie
+
+@mixin breakpoint($break) {
+  @media (min-width: $break) {
+    @content;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -56,6 +62,18 @@ body {
   
   &.scrolled {
     transform: translateY(-110px);
+  }
+
+  @include breakpoint(800px) {
+    padding: 0 8rem;
+  }
+
+  @include breakpoint(1000px) {
+    padding: 0 12rem;
+  }
+
+  @include breakpoint(1300px) {
+    padding: 0 20rem;
   }
 }
 
@@ -245,6 +263,10 @@ input {
   &.notVisible {
     opacity: 0;
   }
+
+  &.memeFont {
+    font-family: 'Roboto Mono', serif;
+  }
 }
 
 .repMaxes {
@@ -253,7 +275,7 @@ input {
   border-collapse: collapse;
   text-align: center;
   width: 100%;
-  margin: 2.6rem 0;
+  margin: 2.6rem auto;
   opacity: 1;
   transition: opacity 250ms ease;
 
@@ -273,5 +295,9 @@ input {
 
   td {
     border-top: 1px solid rgba(48, 46, 68, 0.3);
+  }
+
+  @include breakpoint(370px) {
+    width: 270px;
   }
 }
